@@ -1,0 +1,2 @@
+C:\Users\FIRSTMentor\Desktop\Ethan\Learningcpp\Debug\Learningcpp.exe
+C:\Users\FIRSTMentor\Desktop\Ethan\Learningcpp\Debug\Learningcpp.pdb
