@@ -1,0 +1,44 @@
+loops = 0
+switch color to brown
+	loop:
+		turn left and look for brown
+		if found brown
+			goto loop2
+		else
+			goto loop
+	loop2:
+		turn left and move forward
+		if see brown
+			goto loop2
+		else
+			goto loop3
+	loop3:
+		move forward, right and keep brown on right
+		if see brown
+			goto loop3
+	loop4:
+		switch color to blue
+		move forward a little bit
+		if not blue on left
+			rotate right until blue on left
+	loop5:
+		move forward until no blue
+		rotate left until see blue
+		if not gyro == 180
+			goto loop5
+	loop6:
+		if loops == 0
+			move forward until no blue
+			if see blue
+				goto loop6
+			switch color to brown
+			move forward a little bit
+			rotate left until brown on right
+			loops++
+			goto loop
+		else
+			move forward
+			if see blue
+				goto loop6
+			stop
+		

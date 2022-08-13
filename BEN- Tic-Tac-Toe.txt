@@ -1,0 +1,286 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+string xName;
+string oName;
+
+bool toe = false;
+bool error = false;
+
+//Board
+string row1 [3] = {" |", " |", " "};
+string row2 [3] = {" |", " |", " "};
+string row3 [3] = {" |", " |", " "};
+
+void intro () 
+{
+    cout << "Welcome to C++ Tic-Tac-Toe" << endl;
+    cout << "Please type player 1's (X's) name." << endl;
+    cin >> xName; 
+    cout << "Thank you '" << xName << "' for joining the game!" << endl;
+    cout << "Please type player 2's (O's) name." << endl;
+    cin >> oName;
+    cout << "Thank you '" << oName << "' for joing the game!" << endl;
+    cout << "Lets get started" << endl; 
+}
+
+void broken ()
+{
+    toe = true;
+    cout << "You have broken this program!" << endl;
+    cout << "In order to countine you must restart the program" << endl;
+    cout << "PLEASE RESTART THE PROGRAM" << endl;
+    error = true;
+}
+
+void xWins ()
+{
+    cout << xName << " WINS!!" << endl;
+    cout << "Please Play Again" << endl;
+    toe = true;
+}
+
+void oWins ()
+{
+    cout << oName << " WINS!!" << endl;
+    cout << "Please Play Again" << endl;
+    toe = true;
+}
+
+void draw ()
+{
+    cout << "DRAW!!" << endl;
+    cout << "No one won, please try again." << endl;
+    toe = true;
+}
+
+void board () 
+{
+    cout << row1[0] << row1[1] << row1[2] << endl;
+    cout << "-----" << endl;
+    cout << row2[0] << row2[1] << row2[2] << endl;
+    cout << "-----" << endl;
+    cout << row3[0] << row3[1] << row3[2] << endl;
+}
+
+void check ()
+{
+    // X WINS
+    if (row1[0] == "X|" && row1[1] == "X|" && row1[2] == "X")
+    {
+        toe = true;
+        xWins();
+    }
+    if (row2[0] == "X|" && row2[1] == "X|" && row2[2] == "X")
+    {
+        toe = true;
+        xWins();
+    }
+    if (row3[0] == "X|" && row3[1] == "X|" && row3[2] == "X")
+    {
+        toe = true;
+        xWins();
+    }
+    if (row1[0] == "X|" && row2[0] == "X|" && row3[0] == "X|")
+    {
+        toe = true;
+        xWins();
+    }
+    if (row1[1] == "X|" && row2[1] == "X|" && row3[1] == "X|")
+    {
+        toe = true;
+        xWins();
+    }
+    if (row1[2] == "X" && row2[2] == "X" && row3[2] == "X")
+    {
+        toe = true;
+        xWins();
+    }
+    if (row1[0] == "X|" && row2[1] == "X|" && row3[2] == "X")
+    {
+        toe = true;
+        xWins();
+    }
+    if (row1[2] == "X" && row2[1] == "X|" && row3[0] == "X|")
+    {
+        toe = true;
+        xWins();
+    }
+    // Y WINS
+    if (row1[0] == "O|" && row1[1] == "O|" && row1[2] == "O")
+    {
+        toe = true;
+        oWins();
+    }
+    if (row2[0] == "O|" && row2[1] == "O|" && row2[2] == "O")
+    {
+        toe = true;
+        oWins();
+    }
+    if (row3[0] == "O|" && row3[1] == "O|" && row3[2] == "O")
+    {
+        toe = true;
+        oWins();
+    }
+    if (row1[0] == "O|" && row2[0] == "O|" && row3[0] == "O|")
+    {
+        toe = true;
+        oWins();
+    }
+    if (row1[1] == "O|" && row2[1] == "O|" && row3[1] == "O|")
+    {
+        toe = true;
+        oWins();
+    }
+    if (row1[2] == "O" && row2[2] == "O" && row3[2] == "O")
+    {
+        toe = true;
+        oWins();
+    }
+    if (row1[0] == "O|" && row2[1] == "O|" && row3[2] == "O")
+    {
+        toe = true;
+        oWins();
+    }
+    if (row1[2] == "O" && row2[1] == "O|" && row3[0] == "O|")
+    {
+        toe = true;
+        oWins();
+    }
+    if (toe == false)
+    {
+        if (row1[0] != " |" && row1[1] != " |" && row1[2] != " " && row2[0] != " |" && row2[1] != " |" && row2[2] != " " && row3[0] != " |" && row3[1] != " |" && row3[2] != " ")
+        {
+            toe = true;
+            draw();
+        }
+    }
+}
+
+void game ()
+{
+    string placementStr;
+    int placement;
+    int turn = 1;
+    string player_playing;
+    string icon;
+    while (toe == false)
+    {
+        if (turn % 2 == 0)
+        {
+           player_playing = oName;
+           icon = "O";
+        } else 
+        {
+            player_playing = xName;
+            icon = "X";
+        }
+        cout << player_playing << " its your turn!" << endl;
+        cout << "Type a number 1-9 with 1 being the top left and 9 being the bottom right." << endl;
+        cin >> placementStr;
+        placement = atoi(placementStr.c_str());
+        switch (placement)
+        {
+            //Top Row
+            case 1 : 
+                if (row1[0] == " |")
+                {
+                    row1[0] = icon + "|";
+                } else 
+                {
+                    cout << "There is already something here....SKIPPING TURN!" << endl;
+                }
+                break;
+            case 2 :
+                if (row1[1] == " |")
+                {
+                row1[1] = icon + "|";
+                } else
+                {
+                    cout << "There is already something here....SKIPPING TURN!" << endl;
+                }
+                break;
+            case 3 : 
+                if (row1[2] == " ")
+                {
+                row1[2] = icon;
+                } else
+                {
+                    cout << "There is already something here....SKIPPING TURN!" << endl;
+                }
+                break;
+            //Middle Row
+            case 4 : 
+                if (row2[0] == " |")
+                {
+                row2[0] = icon + "|";
+                } else
+                {
+                    cout << "There is already something here....SKIPPING TURN!" << endl;
+                }
+                break;
+            case 5 : 
+                if (row2[1] == " |")
+                {
+                row2[1] = icon + "|";
+                } else
+                {
+                    cout << "There is already something here....SKIPPING TURN!" << endl;
+                }
+                break;
+            case 6 : 
+                if (row2[2] == " ")
+                {
+                row2[2] = icon;
+                } else
+                {
+                    cout << "There is already something here....SKIPPING TURN!" << endl;
+                }
+                break;
+            //Bottom Row
+            case 7 : 
+                if (row3[0] == " |")
+                {
+                row3[0] = icon + "|";
+                } else
+                {
+                    cout << "There is already something here....SKIPPING TURN!" << endl;
+                }
+                break;
+            case 8 : 
+                if (row3[1] == " |")
+                {
+                row3[1] = icon + "|";
+                } else
+                {
+                    cout << "There is already something here....SKIPPING TURN!" << endl;
+                }
+                break;
+            case 9 : 
+                if (row3[2] == " ")
+                {
+                row3[2] = icon;
+                } else
+                {
+                    cout << "There is already something here....SKIPPING TURN!" << endl;
+                }
+                break;
+            //Default
+            default:
+                cout << "You did not type a number 1-9" << endl;
+                cout << "SKIPPING TURN!" << endl;
+                break;
+        }
+        turn ++;
+        board();
+        check();
+    }
+}
+
+int main () 
+{
+    intro();
+    board();
+    game();
+}

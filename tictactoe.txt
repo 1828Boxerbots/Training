@@ -1,0 +1,196 @@
+#include <iostream>
+
+using namespace std;
+
+//global variables
+string startCode;
+string name;
+string nameTwo;
+string playAgain;
+ char sectionOne = '-', sectionTwo = '-', sectionThree = '-', sectionFour = '-', sectionFive = '-', sectionSix = '-', sectionSeven = '-', sectionEight = '-',sectionNine = '-';
+
+//global functions
+void Beginning()
+{
+ cout<<"Welcome to TICTACTOE!"<<endl;
+ cout<<"Please enter a name for player 1: ";
+ getline(cin, name);
+ cout<<"Welcome "<<name<<endl;
+ cout<<" Please enter a name for player 2: ";
+ getline(cin, nameTwo);
+ cout<<"Welcome "<<nameTwo<<endl;
+ cout<<"Now we are ready to begin the game, Type START to start the game"<<endl;
+ getline(cin, startCode);   
+}
+//this is the function that makes the board
+void Board() 
+     {
+        cout<<"The game is now starting"<<endl;
+        cout<<sectionOne<<"|"<< sectionTwo<< "|"<< sectionThree<<endl;
+        cout<<"-----"<<endl;   
+        cout<<sectionFour<<"|"<<sectionFive<<"|"<<sectionSix<<endl;
+        cout<<"-----"<<endl;
+        cout<<sectionSeven<<"|"<<sectionEight<<"|"<<sectionNine<<endl;
+     }
+    //This is the function that tells the players who's turn it is.
+void StartingGame()
+{
+    if(startCode == "START")
+ {
+  cout<<name<<"'s Turn"<<endl<<"Please put a number 1-9, one being the top left corner, and 9 being the bottom right corner"<<endl;
+ }
+}
+//This is the function that allows there to be an X in one of the tictactoe board placements.
+void TurnBaseX()
+{
+    int boardPlacements;
+    cout<<"What position do you choose?"<<endl;
+    cin>>boardPlacements;
+   switch(boardPlacements)
+    {
+       case 1:
+       if(sectionOne != 'X' || 'O')
+       {
+        sectionOne = 'X';
+       }
+       break;
+        case 2:
+        if(sectionTwo != 'X' || 'O')
+       {
+        sectionTwo = 'X';
+       }
+        break;
+        case 3:
+        if(sectionThree != 'X' || 'O')
+       {
+        sectionThree = 'X';
+       }
+        break;
+        case 4:
+        if(sectionFour != 'X' || 'O')
+       {
+        sectionFour = 'X';
+       } 
+        break;
+        case 5:
+        if(sectionFive != 'X' || 'O')
+       {
+        sectionFive = 'X';
+       }        break;
+        case 6:
+        if(sectionSix != 'X' || 'O')
+       {
+        sectionSix = 'X';
+       }        break;
+        case 7:
+        if(sectionSeven != 'X' || 'O')
+       {
+        sectionSeven = 'X';
+       }        break;
+        case 8:
+        if(sectionEight != 'X' || 'O')
+       {
+        sectionEight = 'X';
+       }        break;
+        case 9:
+        if(sectionNine != 'X' || 'O')
+       {
+        sectionNine = 'X';
+       }        break;
+        default:
+        cout<<"Please enter a number 1-9"<<endl;
+    }
+}
+void TurnBaseO()
+    {
+ int boardPlacementsTwo;
+    cout<<"What position do you choose?"<<endl;
+    cin>>boardPlacementsTwo;
+   switch(boardPlacementsTwo)
+    {
+       case 1:
+       if(sectionOne != 'X' || 'O')
+       {
+        sectionOne = 'O';
+       }
+       break;
+        case 2:
+        if(sectionTwo != 'X' || 'O')
+       {
+        sectionTwo = 'O';
+       }
+        break;
+        case 3:
+        if(sectionThree != 'X' || 'O')
+       {
+        sectionThree = 'O';
+       }
+        break;
+        case 4:
+        if(sectionFour != 'X' || 'O')
+       {
+        sectionFour = 'O';
+       } 
+        break;
+        case 5:
+        if(sectionFive != 'X' || 'O')
+       {
+        sectionFive = 'O';
+       }        break;
+        case 6:
+        if(sectionSix != 'X' || 'O')
+       {
+        sectionSix = 'O';
+       }        break;
+        case 7:
+        if(sectionSeven != 'X' || 'O')
+       {
+        sectionSeven = 'O';
+       }        break;
+        case 8:
+        if(sectionEight != 'X' || 'O')
+       {
+        sectionEight = 'O';
+       }        break;
+        case 9:
+        if(sectionNine != 'X' || 'O')
+       {
+        sectionNine = 'O';
+       }        break;
+        default:
+        cout<<"Please enter a number 1-9"<<endl;
+        break;
+    }
+    }
+    
+//This is the function that runs all of the functions in order
+int main()
+{
+ Beginning();
+ StartingGame();
+ Board();
+ while(sectionOne != 'X' && sectionTwo != 'X' && sectionThree != 'X' || sectionOne != 'X' && sectionFive != 'X' && sectionNine != 'X' || sectionThree != 'X' && sectionFive != 'X' && sectionSeven != 'X' || sectionFour != 'X' && sectionFive != 'X' && sectionSix != 'X' || sectionSeven != 'X' && sectionEight != 'X' && sectionNine != 'X' || sectionTwo != 'X' && sectionFive != 'X' && sectionEight != 'X' || sectionThree != 'X' && sectionSix != 'X' && sectionNine != 'X' || sectionOne != 'X' && sectionFour != 'X' && sectionSeven != 'X')
+ {
+ TurnBaseX();
+ Board();
+ TurnBaseO();
+ Board();
+}
+ if(sectionOne == 'X' && sectionTwo == 'X' && sectionThree == 'X' || sectionOne == 'X' && sectionFive == 'X' && sectionNine == 'X' || sectionThree == 'X' && sectionFive == 'X' && sectionSeven == 'X' || sectionFour == 'X' && sectionFive == 'X' && sectionSix == 'X' || sectionSeven == 'X' && sectionEight == 'X' && sectionNine == 'X' || sectionTwo == 'X' && sectionFive == 'X' && sectionEight == 'X' || sectionThree == 'X' && sectionSix == 'X' && sectionNine == 'X' || sectionOne == 'X' && sectionFour == 'X' && sectionSeven == 'X')
+{
+  cout<<name<<" Has won the game"<<endl;
+  cout<<"Would you like to play again?"<<endl<<"Please type Yes to play again"<<endl;
+  cin>>playAgain;
+  if(playAgain == "yes" || "YES" || "Yes" || "yEs" || "yeS" || "YeS")
+  {
+      sectionOne = '-', sectionTwo = '-', sectionThree = '-', sectionFour = '-', sectionFive = '-', sectionSix = '-', sectionSeven = '-', sectionEight = '-',sectionNine = '-';
+
+      main();
+}
+}
+else
+{
+ cout<<"You have broken the code, please rerun the code"<<endl;
+ 
+}
+}

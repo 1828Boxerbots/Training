@@ -1,0 +1,13 @@
+ok so basically
+	reset gyro
+	while gyro > -270
+		turn until we see green, turn a little to right
+		move forward until green is too far right
+		turn left until back in sights
+	reset gyro
+	while gyro < 180
+		turn until we see green, turn a little to left
+		move forward until green is too far left
+		turn right until back in sights
+	reset gyro
+	while gyro
