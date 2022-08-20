@@ -1,0 +1,2 @@
+C:\Users\FIRSTMentor\Desktop\Thomas Donovan\HelloWorldProgram\Debug\HelloWorldProgram.exe
+C:\Users\FIRSTMentor\Desktop\Thomas Donovan\HelloWorldProgram\Debug\HelloWorldProgram.pdb

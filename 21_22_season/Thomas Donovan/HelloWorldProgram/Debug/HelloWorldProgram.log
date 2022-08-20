@@ -1,0 +1,3 @@
+﻿  HelloWorldProgram.cpp
+C:\Users\FIRSTMentor\Desktop\Thomas Donovan\HelloWorldProgram\HelloWorldProgram.cpp(11,10): warning C4101: 'y': unreferenced local variable
+  HelloWorldProgram.vcxproj -> C:\Users\FIRSTMentor\Desktop\Thomas Donovan\HelloWorldProgram\Debug\HelloWorldProgram.exe

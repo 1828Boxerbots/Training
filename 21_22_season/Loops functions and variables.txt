@@ -1,0 +1,124 @@
+LOOPS
+While loops
+Checks condition before execution
+Ex: While(a < 10)
+{}
+
+For loops 
+Executes the statements in the loops multiple times
+Ex: for(int a = 1; a > 10; a++)
+{}
+
+Do While loops
+Tests condition at the end instead
+Ex: do
+{}
+while( a < 20);
+
+nested loop
+Basically saying that you can have loops in loops in loops etc. there is no max to the amount of loops you can have in each other.
+Ex: While(a<10)
+{
+for(int = b; b =< 10; b =+ 2;
+{}
+}
+---------------------
+LOOP CONTROL STATEMENTS
+Used to control flow of loops they are put in
+Break
+Terminates loop or switch statement. Doesn't break all loops, just breaks the loop its put in.
+
+Continue
+Forces the loop to retest the value, doesn't actually break out of the loop, just forces the code to recheck the value of the beginning loop
+
+Goto
+Transfers control to the labeled statement. Essentially, it tries to bring the code to a different section. Very random, very broken, very bad, Use at your own risk.
+---------------------
+INFINITE LOOPS
+Be cautious of this because its easy to make.
+Made if the value of the loop is never false
+If this happens, check the logic, arithmetic, and conditions.
+When a condition is left out, the calue is considered true.
+Always put a condition, even if you want to make it always true, put a conditional value.
+---------------------
+Decision Statements
+Requires more than one input
+
+These aren't loops, they will only run once, by nature
+
+If statement
+Self explanitory, if condition is true go through this block of code, if false, ignore block of code.
+Ex: if(a<10)
+{}
+If else statement
+If condition is true, it will go through the block of code, but if false, run through a different block of code
+if(a<10) 
+{}
+else
+{}
+Switch statements
+Takes multiple inputs, and takes different input and matches that with different blocks of code. Code can be as complex as you want, just remember to a break statement, or "break;"
+Ex: switch(variable)
+{
+case 'Q' :
+	cout<<"bleh"<<endl;
+	break;
+case 'W' :
+	cout<<"neh"<<endl;
+	break;
+case 'E' :
+	cout<<"weh"<<endl;
+	break;
+default :
+	cout<<"no u"<<endl;
+	break;
+}
+-----------------------
+FUNCTIONS + VARIABLES
+Sections of code writtten to perform certain tasks
+Parts of making a function:
+Declaration: saying that the variable/function exists
+Definition: says what the variable/function stores
+Call: When the variable/function is used for something
+
+Types of declaration:
+int 
+double 
+bool
+char
+string
+float
+void
+NULL ia not a type (unless you are in Java)
+
+additives of declaration:
+signed & unsigned
+short & long
+
+basic syntax for variables and functions:
+
+camelCase: first word is lowercase, then every other starting letter for a word is uppercase ---> blehBlehBlehBleh (used for variables)
+
+PascalCase: all starting letters of words is uppercase---> BlehBlehBlehBleh (used for functions and classes)
+
+function ex:
+void Bleh(This is where you put parameters); (Declaration in .h file)
+Bleh(This is where you put parameters) (Definition in .cpp file)
+{}
+variable ex:
+double blehTwo;
+blehTwo = 10.00;
+OR 
+double blehTwo = 10.00;
+
+---------------------------
+Formatting
+
+cpp file: should have definitions
+header file: should have declarations
+
+Main cpp files calls the function
+different cpp file defines the function
+header file declares the function
+
+
